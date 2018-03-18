@@ -5,6 +5,8 @@ class Client < ApplicationRecord
   has_many :devices, through: :user_sessions
   before_create :attach_uuid
 
+  validates :name, :category, presence: true
+
   def attach_uuid
     self.client_id = generate_uuid
   end
