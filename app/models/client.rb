@@ -1,4 +1,6 @@
 class Client < ApplicationRecord
+  enum category: [ :web, :native ]
+
   has_many :user_sessions
   has_many :devices, through: :user_sessions
   before_create :attach_uuid
