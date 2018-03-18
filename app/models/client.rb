@@ -4,7 +4,7 @@ class Client < ApplicationRecord
 
   def attach_uuid
     loop do
-      token = SecureRandom.random_number(100000000..999999999)
+      token = SecureRandom.hex(12)
       break token unless Client.where(client_id: token).exists?
     end
   end
