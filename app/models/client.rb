@@ -4,6 +4,10 @@ class Client < ApplicationRecord
   before_create :attach_uuid
 
   def attach_uuid
+    self.client_id = generate_uuid
+  end
+
+  def generate_uuid
     loop do
       token = SecureRandom.hex(12)
       break token unless Client.where(client_id: token).exists?
