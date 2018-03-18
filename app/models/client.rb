@@ -1,6 +1,7 @@
 class Client < ApplicationRecord
+  has_many :user_sessions
+  has_many :devices, through: :user_sessions
   before_create :attach_uuid
-  belongs_to :device
 
   def attach_uuid
     loop do
