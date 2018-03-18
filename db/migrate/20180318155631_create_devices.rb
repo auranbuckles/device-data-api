@@ -5,7 +5,7 @@ class CreateDevices < ActiveRecord::Migration[5.0]
       t.string :family
       t.string :brand
       t.string :model
-      t.string :type
+      t.string :device_type
       t.string :os
 
       # # browser data
