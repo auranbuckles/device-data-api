@@ -9,3 +9,23 @@
 20.times do
   Client.create(name: Faker::Lorem.word.capitalize, category: rand(0..1))
 end
+
+# sample web app data
+# Mozilla/5.0 (iPhone9,3; U; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/14A403 Safari/602.1
+
+# sample mobile app data
+# Myapp/1 Dalvik/2.1.0 (Linux; U; Android 6.0.1; vivo 1610 Build/MMB29M)
+
+# testing /device api for web app
+# client_id = Client.first.client_id
+# data = URI.encode("Mozilla/5.0 (iPhone9,3; U; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/14A403 Safari/602.1").gsub(";", "%3B")
+# session_id = "123456"
+# response = RestClient.post 'http://localhost:3000/device', {client_id: client_id, data: data, session_id: session_id}
+# json_res = JSON.parse(response)
+
+# testing /device api for mobile app
+# client_id = Client.first.client_id
+# data = URI.encode("Myapp/1 Dalvik/2.1.0 (Linux; U; Android 6.0.1; vivo 1610 Build/MMB29M)").gsub(";", "%3B")
+# session_id = "123456"
+# response = RestClient.post 'http://localhost:3000/device', {client_id: client_id, data: data, session_id: session_id}
+# json_res = JSON.parse(response)
