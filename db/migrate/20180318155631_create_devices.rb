@@ -2,11 +2,10 @@ class CreateDevices < ActiveRecord::Migration[5.0]
   def change
     create_table :devices do |t|
       # device
-      t.string :family
+      t.string :name
       t.string :brand
       t.string :model
-      t.string :device_type
-      t.string :os
+      t.integer :device_type
 
       # # browser data
       # t.string :browser
