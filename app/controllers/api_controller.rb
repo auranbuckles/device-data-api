@@ -27,7 +27,7 @@ class ApiController < ApplicationController
       os_version = OsVersion.create!(version: device_details.os_full_version, operating_system: os)
       @data = {
         session_data_sent: device_params,
-        device: device.as_json(:except => [:created_at, :updated_at]),
+        device: device.as_json(:except => [:id, :created_at, :updated_at]),
         os: { name: os.name, version: os_version.version }
       }
       json_response(@data)
