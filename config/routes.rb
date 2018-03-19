@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   get 'clients', to: 'api#clients'
   post 'client', to: 'api#client'
   get 'devices', to: 'api#devices'
-  post 'session', to: 'api#session'
+  post 'device', to: 'api#device'
 end
